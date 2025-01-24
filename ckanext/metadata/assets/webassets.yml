@@ -1,0 +1,22 @@
+# metadata-js:
+#   filter: rjsmin
+#   output: ckanext-metadata/%(version)s-metadata.js
+#   contents:
+#     - js/metadata.js
+#   extra:
+#     preload:
+#       - base/main
+
+# metadata-css:
+#   filter: cssrewrite
+#   output: ckanext-metadata/%(version)s-metadata.css
+#   contents:
+#     - css/metadata.css
+
+ckanext_metadata_js:
+  output: ckanext-metadata/%(version)s-metadata.js
+  contents:
+    - js/utils.js
+  extra:
+    preload:
+      - base/main

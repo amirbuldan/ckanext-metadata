@@ -1,0 +1,102 @@
+{# 
+
+Display a grid of metadata items.
+
+metadata - A list of metadatas.
+
+Example:
+
+    {% snippet "metadata/snippets/metadata_list.html" %}
+
+#}
+{% block metadata_list %}
+<div class="{{ list_class or 'dataset-list list-unstyled' }}">
+    {% block metadata_list_inner %}
+        {% for metadata in data %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- <div class="row">
+                    <div class="col-md-12 text-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Action <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">view</a></li>
+                                <li><a href="#">edit</a></li>
+                                <form id="metadata_delete_form" method="POST" action="{{ url_for('metadata.delete', id=metadata.id) }}">
+                                    <input type="hidden" name="id" id="metadata_delete_id" value="{{ metadata.id }}">
+                                    <input type="hidden" name="url" id="metadata_delete_url" value="{{ url_for('metadata.delete', id=metadata.id) }}">
+                                    <li>
+                                        <button type="submit"><span class="glyphicon glyphicon-remove"></span> delete</button>
+                                    </li>
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div> -->
+                
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <!-- <img class="media-object" src="https://placehold.co/80x80/png" alt="..."> -->
+                            <img class="media-object" src="/images/placeholder_file.svg" alt="..." height="100" width="100">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a href="{{ url_for('metadata.get', id=metadata.id) }}">
+                            {{ metadata.title}}
+                            </a>
+                        </h4>
+                        <p>{{ metadata.desc }}</p>
+                        <small>
+                            <span class="glyphicon glyphicon-calendar"></span> {{ metadata.created }}
+                        </small>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        {% endfor %}
+        {% for metadata in data %}
+        <!-- <div class="panel panel-default">
+            <div class="panel-body">
+                <h4 class="panel-title">
+                    <a href="{{ url_for('metadata.get', id=metadata.id) }}">
+                    {{ metadata.title }}
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">view</a></li>
+                            <li><a href="#">edit</a></li>
+                            <form id="metadata_delete_form" method="POST" action="{{ url_for('metadata.delete', id=metadata.id) }}">
+                                <input type="hidden" name="id" id="metadata_delete_id" value="{{ metadata.id }}">
+                                <input type="hidden" name="url" id="metadata_delete_url" value="{{ url_for('metadata.delete', id=metadata.id) }}">
+                                <li>
+                                    <button type="submit"><span class="glyphicon glyphicon-remove"></span> delete</button>
+                                </li>
+                            </form>
+                        </ul>
+                    </div>
+                </h4>
+                <p>{{ metadata.desc }}</p>
+            </div> -->
+        <!-- </div> -->
+        {% endfor %}
+    {% endblock %}
+</div>
+    
+{% endblock %}
+
+{% block add_scripts %}
+
+  <script>
+    console.log('test 123')
+    
+  </script>
+  
+{% endblock %}
