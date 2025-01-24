@@ -4,7 +4,9 @@
 {% endblock %}
 
 {% block breadcrumb_content %}
-    li.active
+    {{ super() }}
+    <li>{% link_for _('Metadata'), named_route='metadata.index' %}</li>
+    <li class="active"><a href="#">{{ h.resource_display_name(data) }}</a></li>
 {% endblock %}
 
 {% block content_action %}
@@ -22,7 +24,11 @@
 {% block primary_content_inner %}
 
 <h2 class="display-3">{{ data.title }}</h2>
-<p>{{ data.desc }}</p>
+{% if data.desc %}
+    <p>{{ data.desc }}</p>
+{% else %}
+    <p><i>Deskripsi belum tersedia</i></p>
+{% endif %}
 
 <div class="well">
     <strong>

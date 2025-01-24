@@ -50,9 +50,13 @@ Example:
                             {{ metadata.title}}
                             </a>
                         </h4>
-                        <p>{{ metadata.desc }}</p>
+                        {% if metadata.desc %}
+                            <p>{{ metadata.desc }}</p>
+                        {% else %}
+                            <p><i>Deskripsi belum tersedia.</i></p>
+                        {% endif %}
                         <small>
-                            <span class="glyphicon glyphicon-calendar"></span> {{ metadata.created }}
+                            <span class="glyphicon glyphicon-calendar"></span> {{ h.string_datetime(metadata.created) }}
                         </small>
                     </div>
                 </div> 

@@ -4,7 +4,8 @@
 {% block subtitle %}metadata{% endblock %}
 
 {% block breadcrumb_content %}
-    li.active
+  {{ super() }}
+  <li class="active">{% link_for _('Metadata'), named_route='metadata.index' %}</li>
 {% endblock %}
 
 {% block page_header %}{% endblock %}

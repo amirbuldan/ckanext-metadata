@@ -50,6 +50,7 @@ def get_all_metadata(context, data_dict):
         metadata_obj.append({
             "id": metadata_item.id,
             "title": metadata_item.title,
+            "name": metadata_item.title, # tambahan untuk kebutuhan breadcrumb
             "desc": metadata_item.desc,
             "author": metadata_item.author,
             "created": metadata_item.created
@@ -77,6 +78,7 @@ def get_metadata(context, data_dict):
         'id': metadata.id,
         'organization_id': metadata.organization_id,
         'title': metadata.title,
+        'name': metadata.title, # tambahan untuk kebutuhan breadcrumb
         'desc': metadata.desc,
         'author': metadata.author,
         'file_path': metadata.file_path
