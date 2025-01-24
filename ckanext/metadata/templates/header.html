@@ -1,7 +1,34 @@
 {% ckan_extends %}
 
 {% block header_site_navigation_tabs %}
-     {{ super() }} 
-    <li><a href="">Metadata</a></li>
+    {# {{ super() }} #}
+    {{ h.build_nav_main(
+        ('dataset.search', _('Datasets')),
+        ('organization.index', _('Organizations')),
+        ('group.index', _('Groups')),
+         ) }}
+    <!-- <li>
+        <a href="#">Link Terkait</a>
+    </li> -->
+    <li><a href="{{ url_for('metadata.index') }}">Metadata</a></li>
+    <li role="presentation" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Publikasi <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Publikasi Sektoral</a></li>
+            <li><a href="#">Produk Hukum</a></li>
+        </ul>
+    </li>
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        OPS sasaran EPSS <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="https://ppkb.bimakota.go.id" target="_blank">DPPKB Kota Bima</a></li>
+            <li><a href="https://pertanian.bimakota.go.id/web/detail/17/tentang_kami" target="_blank">Dinas Pertanian Kota Bima</a></li>
+            <li><a href="https://dkp.bimakota.go.id/" target="_blank">Dinas Ketahanan Pangan Kota Bima</a></li>
+            <li><a href="https://koperindag.bimakota.go.id/" target="_blank">Dinas Koperindag Kota Bima</a></li>
+        </ul>
+    </li>
 {% endblock %}
-{# {% block header_site_search %}{% endblock %} #}
