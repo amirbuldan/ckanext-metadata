@@ -20,6 +20,17 @@
             <li><a href="{{ url_for('produk_hukum.index') }}">Produk Hukum</a></li>
         </ul>
     </li>
+    <!-- <li><a href="{{ url_for('news.index') }}">Media</a></li> -->
+    <li role="presentation" class="dropdown">
+        <a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Media <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ url_for('news.index')}}">Berita</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Video</a></li>
+        </ul>
+    </li>
     <li role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
         OPS sasaran EPSS <span class="caret"></span>
