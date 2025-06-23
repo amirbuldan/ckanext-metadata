@@ -27,11 +27,12 @@
         </a>
         <ul class="dropdown-menu">
             <li><a href="{{ url_for('news.index')}}">Berita</a></li>
-            <li><a href="#">Galeri</a></li>
-            <li><a href="#">Video</a></li>
+            <li>Galeri</li>
+            <li>Video</li>
         </ul>
     </li>
-    <li role="presentation" class="dropdown">
+    <li><a href="{{ url_for('epss.index') }}">OPD Sasaran EPSS</a></li>
+    <!-- <li role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
         OPS sasaran EPSS <span class="caret"></span>
         </a>
@@ -41,5 +42,5 @@
             <li><a href="https://dkp.bimakota.go.id/" target="_blank">Dinas Ketahanan Pangan Kota Bima</a></li>
             <li><a href="https://koperindag.bimakota.go.id/" target="_blank">Dinas Koperindag Kota Bima</a></li>
         </ul>
-    </li>
+    </li> -->
 {% endblock %}
